@@ -57,16 +57,16 @@ public class SearchSteps {
                 this.googlePage.getSearchComponent().clearSearch();
                 this.googlePage.getSearchComponent().search("\""+e+"\"");
                 Assert.assertTrue(this.googlePage.getSearchResult().isAt());
-                Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 0);
-                Assert.assertTrue(this.googlePage.getSearchResult().matchedResults.size()>0,
+                Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 1);
+                Assert.assertTrue(this.googlePage.getSearchResult().matchedResults.size()>=1,
                         "Less results displayed :: "+this.googlePage.getSearchResult().matchedResults.size());
                 this.googlePage.reload();
             } else{
                 this.yahooPage.getSearchComponent().clearSearch();
                 this.yahooPage.getSearchComponent().search("\""+e+"\"");
                 Assert.assertTrue(this.yahooPage.getSearchResult().isAt());
-                Assert.assertTrue(this.yahooPage.getSearchResult().getCount() > 0);
-                Assert.assertTrue(this.yahooPage.getSearchResult().matchedResults.size()>0,
+                Assert.assertTrue(this.yahooPage.getSearchResult().getCount() > 1);
+                Assert.assertTrue(this.yahooPage.getSearchResult().matchedResults.size()>=1,
                         "Less results displayed :: "+this.yahooPage.getSearchResult().matchedResults.size());
                 this.yahooPage.reload();
             }
