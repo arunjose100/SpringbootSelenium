@@ -1,7 +1,7 @@
 package com.app.spring.springselenium.page.google;
 
-import com.app.spring.springselenium.utils.annotation.Page;
 import com.app.spring.springselenium.page.Base;
+import com.app.spring.springselenium.utils.annotation.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 

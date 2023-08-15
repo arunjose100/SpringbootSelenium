@@ -4,21 +4,17 @@ import com.app.spring.springselenium.SpringBaseTestNGTest;
 import com.app.spring.springselenium.page.goguardian.GoguardianHome;
 import com.app.spring.springselenium.page.google.GooglePage;
 import com.app.spring.springselenium.utils.annotation.LazyAutowired;
-import com.app.spring.springselenium.utils.service.ScreenshotService;
 import org.springframework.beans.factory.annotation.Value;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class GoGuardianChromeTest extends SpringBaseTestNGTest {
+public class NewsvalidityGoogleChromeTest extends SpringBaseTestNGTest {
 
     @LazyAutowired
     private GooglePage googlePage;
 
     @LazyAutowired
     private GoguardianHome goguardianHome;
-
-    @LazyAutowired
-    private ScreenshotService screenshotService;
 
     @Value("${application.google}")
     private String url;

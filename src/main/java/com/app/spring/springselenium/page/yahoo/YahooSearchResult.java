@@ -2,9 +2,9 @@ package com.app.spring.springselenium.page.yahoo;
 
 import com.app.spring.springselenium.page.Base;
 import com.app.spring.springselenium.utils.annotation.PageFragment;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
 
 @PageFragment
