@@ -32,8 +32,8 @@ public class NewsvalidityYahooChromeTest extends SpringBaseTestNGTest {
             this.yahooPage.getSearchComponent().clearSearch();
             this.yahooPage.getSearchComponent().search("\""+e+"\"");
             Assert.assertTrue(this.yahooPage.getSearchResult().isAt());
-            Assert.assertTrue(this.yahooPage.getSearchResult().getCount() > 0);
-            Assert.assertTrue(this.yahooPage.getSearchResult().matchedResults.size()>0,
+            Assert.assertTrue(this.yahooPage.getSearchResult().getCount() > 1);
+            Assert.assertTrue(this.yahooPage.getSearchResult().matchedResults.size()>=1,
                     "Less results displayed :: "+this.yahooPage.getSearchResult().matchedResults.size());
             this.yahooPage.reload();
         });

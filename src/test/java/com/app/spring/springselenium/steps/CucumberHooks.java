@@ -8,6 +8,8 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.springframework.context.ApplicationContext;
 
+import java.io.IOException;
+
 public class CucumberHooks {
 
     @LazyAutowired
@@ -19,6 +21,11 @@ public class CucumberHooks {
     @AfterStep
     public void afterStep(Scenario scenario){
         if(scenario.isFailed()){
+            try{
+                this.screenshotService.takeScreenShot(scenario.getName());
+            }catch (IOException e){
+                e.getCause();
+            }
             scenario.attach(this.screenshotService.getScreenshot(), "image/png", scenario.getName());
         }
     }

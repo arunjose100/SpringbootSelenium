@@ -19,7 +19,7 @@ public class NewsvalidityGoogleChromeTest extends SpringBaseTestNGTest {
     @Value("${application.google}")
     private String url;
 
-    @Test
+    @Test(description = "News validation test on Google source")
     public void test() throws InterruptedException {
         this.goguardianHome.goTo();
         Assert.assertEquals(this.goguardianHome.getTitle(), "News | The Guardian", "Page title doesn't match");
@@ -32,8 +32,8 @@ public class NewsvalidityGoogleChromeTest extends SpringBaseTestNGTest {
             this.googlePage.getSearchComponent().clearSearch();
             this.googlePage.getSearchComponent().search("\""+e+"\"");
             Assert.assertTrue(this.googlePage.getSearchResult().isAt());
-            Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 0);
-            Assert.assertTrue(this.googlePage.getSearchResult().matchedResults.size()>0,
+            Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 1);
+            Assert.assertTrue(this.googlePage.getSearchResult().matchedResults.size()>=1,
                     "Less results displayed :: "+this.googlePage.getSearchResult().matchedResults.size());
             this.googlePage.reload();
         });
