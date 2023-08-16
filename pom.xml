@@ -109,7 +109,8 @@
 						</property>
 					</properties>
 					<includes>
-						<include>com.app.spring.springselenium.runners.CucumberRunner</include>
+						<include>com.app.spring.springselenium.runners.AllnewsRunner</include>
+						<include>com.app.spring.springselenium.runners.SinglenewsRunner</include>
 					</includes>
 				</configuration>
 			</plugin>

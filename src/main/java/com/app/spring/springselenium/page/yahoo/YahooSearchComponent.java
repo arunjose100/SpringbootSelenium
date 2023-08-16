@@ -1,6 +1,8 @@
 package com.app.spring.springselenium.page.yahoo;
 
 import com.app.spring.springselenium.page.Base;
+import com.app.spring.springselenium.page.google.GoogleSearchResult;
+import com.app.spring.springselenium.utils.annotation.LazyAutowired;
 import com.app.spring.springselenium.utils.annotation.PageFragment;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -15,16 +17,21 @@ public class YahooSearchComponent extends Base {
     @FindBy(id = "ybar-search")
     private WebElement searchBtn;
 
-    public void clearSearch(){
+    @LazyAutowired
+    private YahooSearchResult yahooSearchResult;
+
+    public YahooSearchComponent clearSearch(){
         this.searchBox.clear();
+        return this;
     }
 
-    public void search(final String keyword){
+    public YahooSearchResult search(final String keyword){
         this.wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
         this.searchBox.sendKeys(keyword);
         if(searchBtn.isDisplayed() && searchBtn.isEnabled()){
             searchBtn.click();
         }
+        return this.yahooSearchResult;
     }
 
     @Override
