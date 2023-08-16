@@ -7,15 +7,15 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = "classpath:features",
         glue = "com.app.spring.springselenium.steps",
-        tags =  "@goguardian",
+        tags =  "@singlenews",
         plugin = {
-                "json:target/cucumber/cucumber1.json",
+                "json:target/cucumber/cucumber2.json",
                 "pretty",
                 "html:target/site/cucumber-pretty"
         },
         monochrome = true
 )
-public class CucumberRunner extends AbstractTestNGCucumberTests {
+public class SinglenewsRunner extends AbstractTestNGCucumberTests {
 
     @Override
     @DataProvider(parallel = true)

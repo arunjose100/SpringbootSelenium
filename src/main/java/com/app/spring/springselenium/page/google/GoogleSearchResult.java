@@ -1,6 +1,7 @@
 package com.app.spring.springselenium.page.google;
 
 import com.app.spring.springselenium.page.Base;
+import com.app.spring.springselenium.utils.annotation.LazyAutowired;
 import com.app.spring.springselenium.utils.annotation.PageFragment;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
