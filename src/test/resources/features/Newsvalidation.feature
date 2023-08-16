@@ -13,4 +13,8 @@ Feature: News validation by a news in various domains
     Examples:
       | domain url                  | domain name | news index| min expected count |
       | https://www.google.com      | google      | 1         | 1                  |
-      | https://www.yahoo.com/      | yahoo       | 2         | 2                  |
+      | https://www.google.com      | google      | 2         | 2                  |
+      | https://www.google.com      | google      | 3         | 1                  |
+      | https://www.yahoo.com/      | yahoo       | 2         | 1                  |
+      | https://www.yahoo.com/      | yahoo       | 1         | 2                  |
+      | https://www.yahoo.com/      | yahoo       | 4         | 3                  |
