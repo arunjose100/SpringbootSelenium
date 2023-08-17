@@ -19,10 +19,13 @@ public class NewsvalidityGoogleChromeTest extends SpringBaseTestNGTest {
     @Value("${application.google}")
     private String url;
 
+    @Value("${page.title}")
+    private String pageTitle;
+
     @Test(description = "News validation test on Google source")
     public void test() throws InterruptedException {
         this.goguardianHome.goTo();
-        Assert.assertEquals(this.goguardianHome.getTitle(), "News | The Guardian", "Page title doesn't match");
+        Assert.assertEquals(this.goguardianHome.getTitle(), this.pageTitle, "Page title doesn't match");
         Assert.assertTrue(this.goguardianHome.isAt());
         this.goguardianHome.captureMainNewsDetails();
 

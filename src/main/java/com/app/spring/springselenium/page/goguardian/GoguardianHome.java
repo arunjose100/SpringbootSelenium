@@ -16,9 +16,6 @@ public class GoguardianHome extends Base {
     @Value("${application.url}")
     private String url;
 
-    @Value("${page.title}")
-    private String pageTitle;
-
     @FindBy(xpath = "//h3[contains(@class,'fc-item__title')]/a")
     private List<WebElement> newsResults;
 
@@ -29,7 +26,7 @@ public class GoguardianHome extends Base {
     }
 
     public String getTitle(){
-        return this.pageTitle;
+        return this.driver.getTitle();
     }
 
     public void captureMainNewsDetails(){
